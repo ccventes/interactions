@@ -15,6 +15,40 @@ function App() {
   ];
   const [selectedFruit, setSelectedFruit] = useState("");
 
+
+  //EJEMPLO BASICO DE REDUCE
+
+   const numbers = [2, 4, 6, 8, 10];
+   const total = numbers.reduce((acc, num) => acc + num, 0);
+   //acc es el acumulador
+   // num es un iterador que recorre los valores numbers
+   //for() {acc = acc + num} (declarativo)
+   //acc inicia en 0
+
+   // SUMEMOS FRUTAS
+   // Reducimos el arreglo a un objeto con conteo por fruta
+  const fruitCounts = fruits.reduce((acc, fruit) => {
+    acc[fruit] = (acc[fruit] || 0) + 1;
+    return acc;
+  }, {});
+
+  //acc  ya no es un numero, es un objeto
+  /*
+  {
+    manzanas: 0,
+    uvas: 0,
+    banano: 0,
+    .
+    .
+    .
+    etc
+    }
+    Por que acc[fruit] || 0 ?
+    
+
+*/
+
+
   // Filtrar según la fruta seleccionada
   const filteredFruits = selectedFruit
     ? fruits.filter((fruit) => fruit === selectedFruit)
@@ -58,6 +92,34 @@ function App() {
         ))}
       </ul>
     </div>
+
+    <div>
+          <h2>Ejemplo de reduce()</h2>
+          <p>Arreglo: {numbers.join(", ")}</p>
+          <p>La suma de todos los números es: <b>{total}</b></p>
+
+          <h2>Sumemos frutas()</h2>
+          {/* 
+          
+             object.entries(fruitCounts)
+             [ [manzanas, 0]
+               [uvas, 0],
+               [banano, 0,]
+               [etc, valor_otras_frutas],
+           ]
+          
+          */}
+          <ul>
+            {Object.entries(fruitCounts).map(([fruit, count]) => (
+              <li key={fruit}>
+                {fruit}: {count} veces
+              </li>
+            ))}
+          </ul>
+      
+    </div>
+
+    
       
       </>
     
