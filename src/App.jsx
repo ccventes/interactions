@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-     <h1>Hoy veremos sobre interacciones</h1>
+     <h1>Hoy veremos sobre interacciones ddd</h1>
     </>
   )
 }
