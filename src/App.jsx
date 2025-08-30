@@ -116,6 +116,7 @@ function App() {
               </li>
             ))}
           </ul>
+          <h1> EJercicio practico</h1>
           <h2>Sumemos indices()</h2>
       
     </div>
