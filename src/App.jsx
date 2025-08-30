@@ -116,6 +116,7 @@ function App() {
               </li>
             ))}
           </ul>
+          <h2>Sumemos indices()</h2>
       
     </div>
 
